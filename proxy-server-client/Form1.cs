@@ -16,7 +16,7 @@ namespace proxy_server_client
 {
     public partial class Form1 : Form
     {
-        static HttpClient client = new HttpClient();
+		static HttpClient client = null;
 
 
         public Form1()
@@ -31,8 +31,10 @@ namespace proxy_server_client
 
         private async void btn_Connect_Click(object sender, EventArgs e)
         {
-            //  Initialize connection
-            client.BaseAddress = new Uri("http://localhost:3000/");
+			//	Create new client
+			client = new HttpClient();
+			//  Initialize connection
+			client.BaseAddress = new Uri("http://localhost:3000/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -54,5 +56,5 @@ namespace proxy_server_client
 
             return obj;
         }
-    }
+	}
 }
