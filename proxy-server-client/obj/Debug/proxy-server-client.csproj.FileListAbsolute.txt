@@ -8,3 +8,16 @@ C:\Users\alini\OneDrive\Desktop\Disertatie\proxy-server-client\proxy-server-clie
 C:\Users\alini\OneDrive\Desktop\Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.csproj.CoreCompileInputs.cache
 C:\Users\alini\OneDrive\Desktop\Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.exe
 C:\Users\alini\OneDrive\Desktop\Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.pdb
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.csprojAssemblyReference.cache
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.Form1.resources
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.Properties.Resources.resources
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.csproj.GenerateResource.cache
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.csproj.CoreCompileInputs.cache
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.exe
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.pdb
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\bin\Debug\proxy-server-client.exe.config
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\bin\Debug\proxy-server-client.exe
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\bin\Debug\proxy-server-client.pdb
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\bin\Debug\Newtonsoft.Json.dll
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\bin\Debug\Newtonsoft.Json.xml
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-server-client.csproj.CopyComplete

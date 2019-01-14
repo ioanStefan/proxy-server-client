@@ -40,7 +40,7 @@ namespace proxy_server_client
 
             dynamic res = await ConnectToProxy();
 
-            lbl_Response.Text = res;
+            //lbl_Response.Text = res;
         }
 
         static async Task<dynamic> ConnectToProxy()
