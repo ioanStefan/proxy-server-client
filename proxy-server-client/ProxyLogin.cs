@@ -14,12 +14,12 @@ using System.Net.Http.Headers;
 
 namespace proxy_server_client
 {
-    public partial class Form1 : Form
+    public partial class ProxyLogin : Form
     {
 		static HttpClient client = null;
 
 
-        public Form1()
+        public ProxyLogin()
         {
             InitializeComponent();
         }
@@ -56,5 +56,11 @@ namespace proxy_server_client
 
             return obj;
         }
-	}
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            ProxyMain pMain = new ProxyMain();
+            pMain.Show();
+        }
+    }
 }
