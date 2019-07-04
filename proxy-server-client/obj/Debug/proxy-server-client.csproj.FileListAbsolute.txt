@@ -23,3 +23,7 @@ D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy-se
 D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.ChangePassword.resources
 D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.ProxyLogin.resources
 D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.ProxyMain.resources
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.ProxyServers.resources
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.ProxyTargets.resources
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.InternalHosts.resources
+D:\Lucrare_Disertatie\proxy-server-client\proxy-server-client\obj\Debug\proxy_server_client.Test.resources
