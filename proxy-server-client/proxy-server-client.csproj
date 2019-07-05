@@ -56,6 +56,15 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="InternalHosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InternalHosts.Designer.cs">
+      <DependentUpon>InternalHosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models.cs" />
     <Compile Include="ProxyLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +79,30 @@
     <Compile Include="ProxyMain.Designer.cs">
       <DependentUpon>ProxyMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProxyServers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProxyServers.Designer.cs">
+      <DependentUpon>ProxyServers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProxyTargets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProxyTargets.Designer.cs">
+      <DependentUpon>ProxyTargets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Server.cs" />
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalHosts.resx">
+      <DependentUpon>InternalHosts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProxyLogin.resx">
       <DependentUpon>ProxyLogin.cs</DependentUpon>
@@ -87,6 +118,15 @@
     </Compile>
     <EmbeddedResource Include="ProxyMain.resx">
       <DependentUpon>ProxyMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProxyServers.resx">
+      <DependentUpon>ProxyServers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProxyTargets.resx">
+      <DependentUpon>ProxyTargets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

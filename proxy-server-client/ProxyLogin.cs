@@ -22,6 +22,9 @@ namespace proxy_server_client
         public ProxyLogin()
         {
             InitializeComponent();
+
+            tb_IP.Text = "192.168.1.7:3010";
+            tb_token.Text = "TOKEN";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,8 +60,11 @@ namespace proxy_server_client
             return obj;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
+            Globals.ProxyIP = tb_IP.Text;
+            Globals.Token = tb_token.Text;
+
             ProxyMain pMain = new ProxyMain();
             pMain.Show();
         }

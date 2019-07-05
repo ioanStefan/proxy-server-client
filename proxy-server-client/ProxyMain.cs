@@ -19,10 +19,12 @@ namespace proxy_server_client
         {
             InitializeComponent();
 
-            panels = new Dictionary<string, Panel>();
+            Globals.ProxyServers = true;
+            Globals.ProxyTargets = true;
+            Globals.LocalHosts = true;
 
-            panels.Add("pHome", panel_Home);
-            panels.Add("pProxyServers", panel_ProxyServers);
+            Models.GetProxyConfig();
+
         }
 
         private void ProxyMain_Load(object sender, EventArgs e)
@@ -42,24 +44,36 @@ namespace proxy_server_client
 
         private void btn_ProxyServers_Click(object sender, EventArgs e)
         {
-            //HidePanels();
-            panels["pProxyServers"].Visible = true;
-        }
 
-        private void btn_Home_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            panels["pHome"].Visible = true;
-        }
-
-        private void HidePanels()
-        {
-            foreach (string panel in panels.Keys)
+            if (Globals.ProxyServers)
             {
-                panels[panel].Visible = false;
+                Globals.ProxyServers = false;
+                ProxyServers psFrm = new ProxyServers();
+                psFrm.Show();
             }
+        }
+
+        private void btn_ProxyTargets_Click(object sender, EventArgs e)
+        {
+            ProxyTargets ptForm = new ProxyTargets();
+            ptForm.Show();
+        }
+
+        private void btn_Text_Click(object sender, EventArgs e)
+        {
+            Test tForm = new Test();
+            tForm.Show();
+        }
+
+        private void btn_ExitApplication_Click(object sender, EventArgs e)
+        {
 
         }
 
+        private void btn_InternalHosts_Click(object sender, EventArgs e)
+        {
+            InternalHosts ihForm = new InternalHosts();
+            ihForm.Show();
+        }
     }
 }
