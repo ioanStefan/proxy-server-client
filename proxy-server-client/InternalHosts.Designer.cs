@@ -59,9 +59,11 @@
             this.cb_pdAlgorithm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_pdAlgorithm.FormattingEnabled = true;
             this.cb_pdAlgorithm.Items.AddRange(new object[] {
-            "AES-CTR",
-            "DES",
-            "T-DES"});
+            "aes-256-cbc",
+            "aes-256-ctr",
+            "aes-256-cfb",
+            "des-cbc",
+            "des-cfb"});
             this.cb_pdAlgorithm.Location = new System.Drawing.Point(298, 135);
             this.cb_pdAlgorithm.Name = "cb_pdAlgorithm";
             this.cb_pdAlgorithm.Size = new System.Drawing.Size(265, 32);
@@ -117,9 +119,11 @@
             this.cb_newAlgorithm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_newAlgorithm.FormattingEnabled = true;
             this.cb_newAlgorithm.Items.AddRange(new object[] {
-            "AES-CTR",
-            "DES",
-            "T-DES"});
+            "aes-256-cbc",
+            "aes-256-ctr",
+            "aes-256-cfb",
+            "des-cbc",
+            "des-cfb"});
             this.cb_newAlgorithm.Location = new System.Drawing.Point(157, 472);
             this.cb_newAlgorithm.Name = "cb_newAlgorithm";
             this.cb_newAlgorithm.Size = new System.Drawing.Size(265, 32);

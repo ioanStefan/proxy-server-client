@@ -121,7 +121,8 @@ namespace proxy_server_client
         // Metoda adaugă un nou Server Proxy
         public static async Task<bool> AddNewProxyServer(Dictionary<string, string> server)
         {
-            HttpClient client = ConfigClient();          
+            HttpClient client = ConfigClient();                      
+
             dynamic response = await PostData(client, "/config/servers", server);
             return response;
         }
@@ -181,6 +182,15 @@ namespace proxy_server_client
 
             return response;
 
+        }
+
+        public static async Task<bool> RemoveTarget(string target)
+        {
+            HttpClient client = ConfigClient();
+
+            dynamic response = await DeleteData(client, "/config/targets/" + target);
+
+            return response;
         }
 
         // Metoda utilizată pentru testarea

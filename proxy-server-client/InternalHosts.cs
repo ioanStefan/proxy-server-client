@@ -19,19 +19,47 @@ namespace proxy_server_client
             Models.GetInternalHosts(lb_InternalHosts);
         }
 
-        private void btn_UpdateHost_Click(object sender, EventArgs e)
+        async private void btn_UpdateHost_Click(object sender, EventArgs e)
         {
+            Dictionary<string, string> internalHost = new Dictionary<string, string>();
 
+            internalHost.Add("host", tb_pdHostname.Text);
+            internalHost.Add("port", tb_pdPort.Text);
+            internalHost.Add("key", tb_pdSecredKey.Text);
+            internalHost.Add("encAlgorithm", cb_pdAlgorithm.Text);
+            internalHost.Add("details", rtb_InternalHostDetails.Text);
+
+            bool response = await Models.UpdateInternalHost(internalHost);
+
+            Notify(response);
         }
 
-        private void btn_RemoveHost_Click(object sender, EventArgs e)
+        async private void btn_RemoveHost_Click(object sender, EventArgs e)
         {
+            bool response = await Models.RemoveInternalHost(tb_pdHostname.Text);
 
+            Notify(response);
+
+            if (response)
+                ClearInputs("update");
         }
 
-        private void btn_AddNewHost_Click(object sender, EventArgs e)
+        async private void btn_AddNewHost_Click(object sender, EventArgs e)
         {
+            Dictionary<string, string> server = new Dictionary<string, string>();
 
+            server.Add("host", tb_NewInternalHostIP.Text);
+            server.Add("port", tb_NewInternalHostPort.Text);
+            server.Add("key", tb_newSecredKey.Text);
+            server.Add("encAlgorithm", cb_newAlgorithm.Text);
+            server.Add("details", rtb_NewInternalHostDetails.Text);
+
+            bool response = await Models.AddNewInternalHost(server);
+
+            Notify(response);
+
+            if (response)
+                ClearInputs("new");
         }
 
         private void lb_InternalHosts_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,6 +71,37 @@ namespace proxy_server_client
             tb_pdSecredKey.Text = internalHost.key;
             cb_pdAlgorithm.Text = internalHost.encAlgorithm;
             rtb_InternalHostDetails.Text = internalHost.details;
+        }
+
+        private void Notify(bool type)
+        {
+            if (type)
+                MessageBox.Show("Succes!");
+            else
+                MessageBox.Show("Verifica datele!");
+        }
+
+        private void ClearInputs(string inputs)
+        {
+            switch (inputs)
+            {
+                case "new":
+                    tb_NewInternalHostIP.Clear();
+                    tb_NewInternalHostPort.Clear();
+                    tb_newSecredKey.Clear();
+                    cb_newAlgorithm.Text = "";
+                    rtb_NewInternalHostDetails.Clear();
+                    break;
+                case "update":
+                    tb_pdHostname.Clear();
+                    tb_pdPort.Clear();
+                    tb_pdSecredKey.Clear();
+                    cb_pdAlgorithm.Text = "";
+                    rtb_InternalHostDetails.Clear();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

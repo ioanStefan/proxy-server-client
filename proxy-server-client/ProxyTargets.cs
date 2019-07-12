@@ -74,5 +74,35 @@ namespace proxy_server_client
             else
                 MessageBox.Show("Verifica datele!");
         }
+
+        async private void btn_RemoveProxyTarget_Click(object sender, EventArgs e)
+        {
+            bool response = await Models.RemoveTarget(tb_tdHost.Text);
+
+            Notify(response);
+
+            if (response)
+                ClearInputs("update");
+        }
+
+
+        private void ClearInputs(string inputs)
+        {
+            switch (inputs)
+            {
+                case "new":
+                    tb_NewTargetHost.Clear();
+                    tb_NewTargetPort.Clear();
+                    rtb_NewTargetDetails.Clear();                    
+                    break;
+                case "update":
+                    tb_tdHost.Clear();
+                    tb_tdPort.Clear();
+                    rtb_Details.Clear();               
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

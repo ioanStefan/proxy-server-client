@@ -150,6 +150,7 @@
             this.btn_RemoveProxyTarget.TabIndex = 36;
             this.btn_RemoveProxyTarget.Text = "Remove";
             this.btn_RemoveProxyTarget.UseVisualStyleBackColor = false;
+            this.btn_RemoveProxyTarget.Click += new System.EventHandler(this.btn_RemoveProxyTarget_Click);
             // 
             // rtb_NewTargetDetails
             // 
