@@ -37,6 +37,14 @@ namespace proxy_server_client
             bool response = await Models.UpdateTarget(target);
 
             Notify(response);
+
+            if (response)
+            {
+                Models.GetProxyConfig();
+
+                for (int i = 0; i <= 100000000; i++) { }
+             
+            }
         }
 
         private async void btn_AddNewTarget_Click(object sender, EventArgs e)
@@ -51,6 +59,17 @@ namespace proxy_server_client
             bool response = await Models.AddTarget(target);
 
             Notify(response);
+
+            if (response)
+            {
+                Models.GetProxyConfig();
+
+                for (int i = 0; i <= 100000000; i++) { }
+
+                lb_ProxyTargets.Items.Add(tb_NewTargetHost.Text);                                
+
+                ClearInputs("new");
+            }
         }
 
         private void lb_ProxyTargets_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,7 +101,15 @@ namespace proxy_server_client
             Notify(response);
 
             if (response)
+            {
+                Models.GetProxyConfig();
+
+                for (int i = 0; i <= 100000000; i++) { }
+
+                Models.GetProxyTargets(cb_ProxyServers.Text, lb_ProxyTargets);
+
                 ClearInputs("update");
+            }
         }
 
 

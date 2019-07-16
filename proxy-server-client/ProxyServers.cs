@@ -30,10 +30,18 @@ namespace proxy_server_client
 
             bool response = await Models.AddNewProxyServer(server);
 
+            dynamic proxyConfig = Globals.ProxyConfig;
+
             Notify(response);
 
             if (response)
-                ClearInputs("new");
+            {
+                Models.GetProxyConfig();
+
+                lbox_ProxyServers.Items.Add(tb_NewProxyServerIP.Text);
+
+                ClearInputs("new");                
+            }
         }
 
         private async void btn_RemoveProxyServer_Click(object sender, EventArgs e)
@@ -43,7 +51,15 @@ namespace proxy_server_client
             Notify(response);
 
             if (response)
+            {
+                Models.GetProxyConfig();
+
+                for (int i = 0; i <= 10000000; i++) { }
+
+                Models.GetProxyServers(lbox_ProxyServers);
+
                 ClearInputs("update");
+            }
 
         }
 
@@ -62,7 +78,11 @@ namespace proxy_server_client
             Notify(response);
 
             if (response)
+            {
+                Models.GetProxyConfig();
+
                 ClearInputs("update");
+            }
         }
 
         private void ProxyServers_FormClosed(object sender, FormClosedEventArgs e)

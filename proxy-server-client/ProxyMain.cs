@@ -67,7 +67,7 @@ namespace proxy_server_client
 
         private void btn_ExitApplication_Click(object sender, EventArgs e)
         {
-
+            Globals.loginForm.Close();
         }
 
         private void btn_InternalHosts_Click(object sender, EventArgs e)

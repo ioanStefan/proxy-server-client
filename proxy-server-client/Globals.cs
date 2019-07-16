@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace proxy_server_client
 {
@@ -17,5 +18,7 @@ namespace proxy_server_client
 
         public static dynamic ProxyConfig { get; set; }
         public static dynamic ProxyTargetsList { get; set; }
+
+        public static Form loginForm { get; set; }
     }
 }

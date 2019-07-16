@@ -32,6 +32,18 @@ namespace proxy_server_client
             bool response = await Models.UpdateInternalHost(internalHost);
 
             Notify(response);
+
+            if (response)
+            {
+                Models.GetProxyConfig();
+
+                for (int i = 0; i <= 100000000; i++)
+                {
+
+                }
+
+
+            }
         }
 
         async private void btn_RemoveHost_Click(object sender, EventArgs e)
@@ -41,7 +53,15 @@ namespace proxy_server_client
             Notify(response);
 
             if (response)
+            {
+                Models.GetProxyConfig();
+
+                for (int i = 0; i <= 100000000; i++) { }
+
+                Models.GetInternalHosts(lb_InternalHosts);
+
                 ClearInputs("update");
+            }
         }
 
         async private void btn_AddNewHost_Click(object sender, EventArgs e)
@@ -59,7 +79,14 @@ namespace proxy_server_client
             Notify(response);
 
             if (response)
+            {
+                Models.GetProxyConfig();
+                for (int i = 0; i <= 100000000; i++) { }
+
+                lb_InternalHosts.Items.Add(tb_NewInternalHostIP.Text);
+
                 ClearInputs("new");
+            }
         }
 
         private void lb_InternalHosts_SelectedIndexChanged(object sender, EventArgs e)

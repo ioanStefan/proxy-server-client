@@ -19,7 +19,9 @@ namespace proxy_server_client
         // într-o componentă de tip ListBox
         public static void GetProxyServers(ListBox listBox)
         {            
-            dynamic servers = Globals.ProxyConfig.servers;        
+            dynamic servers = Globals.ProxyConfig.servers;
+
+            listBox.Items.Clear();
 
             foreach(dynamic server in servers)
             {
@@ -33,6 +35,7 @@ namespace proxy_server_client
         {
             dynamic servers = Globals.ProxyConfig.servers;
 
+            comboBox.Items.Clear();
             comboBox.Items.Add("");
 
             foreach(dynamic server in servers)
@@ -91,14 +94,18 @@ namespace proxy_server_client
                 {
                     dynamic targets = server.proxyTo;
 
-                    foreach(dynamic target in targets)
+                    if (targets.length > 0)
                     {
-                        listBox.Items.Add(target.host);
+
+                        foreach (dynamic target in targets)
+                        {
+                            listBox.Items.Add(target.host);
+                        }
+
+                        Globals.ProxyTargetsList = targets;
+
+                        break;
                     }
-
-                    Globals.ProxyTargetsList = targets;
-
-                    break;
                 }
             }
 

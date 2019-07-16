@@ -64,6 +64,8 @@ namespace proxy_server_client
         {
             this.Hide();
 
+            Globals.loginForm = this;
+
             Globals.ProxyIP = tb_IP.Text;
             Globals.Token = tb_token.Text;
 
