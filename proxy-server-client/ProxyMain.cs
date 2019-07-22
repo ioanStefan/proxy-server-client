@@ -9,11 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+
+using Newtonsoft;
+using Newtonsoft.Json;
+using System.Threading;
+
 namespace proxy_server_client
 {
     public partial class ProxyMain : Form
     {
-        private Dictionary<string, Panel> panels = null;
+        Thread thread = null;
 
         public ProxyMain()
         {
@@ -74,6 +82,55 @@ namespace proxy_server_client
         {
             InternalHosts ihForm = new InternalHosts();
             ihForm.Show();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        async private void btn_Send_Click(object sender, EventArgs e)
+        {
+            string ip = tb_IP.Text;
+            string port = tb_Port.Text;
+            string message = rtb_Message.Text;
+
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://" + ip + ":" + port);
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            Dictionary<string, string> data = new Dictionary<string, string>();
+
+            data.Add("msg", message);
+
+            dynamic content = new FormUrlEncodedContent(data);
+
+            HttpResponseMessage response = await client.PostAsync("/", content);
+
+            string res = await response.Content.ReadAsStringAsync();
+
+            rtb_Response.Text += res + "\n -------------------------------------";
+        }
+
+        private void btn_StopServer_Click(object sender, EventArgs e)
+        {
+            thread.Abort();
+
+            btn_StartServer.Enabled = true;
+            btn_StopServer.Enabled = false;
+        }
+
+        private void btn_StartServer_Click(object sender, EventArgs e)
+        {         
+            Server srv = new Server();
+
+            int port = Int32.Parse(tb_ServerPort.Text);
+
+            thread = srv.Start(port);
+
+            btn_StartServer.Enabled = false;
+            btn_StopServer.Enabled = true;
         }
     }
 }

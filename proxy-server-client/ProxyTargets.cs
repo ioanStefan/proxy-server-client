@@ -23,6 +23,8 @@ namespace proxy_server_client
         {
             string hostname = cb_ProxyServers.Text;
 
+            lb_ProxyTargets.Items.Clear();
+
             Models.GetProxyTargets(hostname, lb_ProxyTargets);
         }
 
@@ -96,7 +98,9 @@ namespace proxy_server_client
 
         async private void btn_RemoveProxyTarget_Click(object sender, EventArgs e)
         {
-            bool response = await Models.RemoveTarget(tb_tdHost.Text);
+            bool response = await Models.RemoveTarget( cb_ProxyServers.Text, tb_tdHost.Text);
+
+            for (int i = 0; i <= 100000000; i++) { }
 
             Notify(response);
 
@@ -105,6 +109,8 @@ namespace proxy_server_client
                 Models.GetProxyConfig();
 
                 for (int i = 0; i <= 100000000; i++) { }
+
+                lb_ProxyTargets.Items.Clear();
 
                 Models.GetProxyTargets(cb_ProxyServers.Text, lb_ProxyTargets);
 

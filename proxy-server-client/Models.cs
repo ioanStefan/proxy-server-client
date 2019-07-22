@@ -94,8 +94,8 @@ namespace proxy_server_client
                 {
                     dynamic targets = server.proxyTo;
 
-                    if (targets.length > 0)
-                    {
+                    //if (targets.length > 0)
+                    //{
 
                         foreach (dynamic target in targets)
                         {
@@ -104,8 +104,8 @@ namespace proxy_server_client
 
                         Globals.ProxyTargetsList = targets;
 
-                        break;
-                    }
+                    //    break;
+                    //}
                 }
             }
 
@@ -191,11 +191,11 @@ namespace proxy_server_client
 
         }
 
-        public static async Task<bool> RemoveTarget(string target)
+        public static async Task<bool> RemoveTarget(string proxy, string target)
         {
             HttpClient client = ConfigClient();
 
-            dynamic response = await DeleteData(client, "/config/targets/" + target);
+            dynamic response = await DeleteData(client, "/config/targets/" + proxy + "/" + target);
 
             return response;
         }
