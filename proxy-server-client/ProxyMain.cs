@@ -131,6 +131,8 @@ namespace proxy_server_client
 
             btn_StartServer.Enabled = false;
             btn_StopServer.Enabled = true;
+
+            Globals.gRtbClientRequest = rtbClientRequest;
         }
     }
 }

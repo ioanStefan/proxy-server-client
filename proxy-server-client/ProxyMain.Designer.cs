@@ -50,6 +50,7 @@
             this.rtb_Message = new System.Windows.Forms.RichTextBox();
             this.btn_OpenProxyConnection = new System.Windows.Forms.Button();
             this.btn_CloseProxyConnection = new System.Windows.Forms.Button();
+            this.rtbClientRequest = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -144,6 +145,7 @@
             // 
             // panel_Home
             // 
+            this.panel_Home.Controls.Add(this.rtbClientRequest);
             this.panel_Home.Controls.Add(this.label5);
             this.panel_Home.Controls.Add(this.label4);
             this.panel_Home.Controls.Add(this.btn_StartServer);
@@ -169,7 +171,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 533);
+            this.label5.Location = new System.Drawing.Point(29, 423);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(536, 20);
             this.label5.TabIndex = 21;
@@ -179,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 169);
+            this.label4.Location = new System.Drawing.Point(20, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(551, 20);
             this.label4.TabIndex = 20;
@@ -232,7 +234,7 @@
             // rtb_Response
             // 
             this.rtb_Response.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_Response.Location = new System.Drawing.Point(24, 346);
+            this.rtb_Response.Location = new System.Drawing.Point(24, 271);
             this.rtb_Response.Name = "rtb_Response";
             this.rtb_Response.Size = new System.Drawing.Size(450, 96);
             this.rtb_Response.TabIndex = 15;
@@ -242,7 +244,7 @@
             // 
             this.btn_Send.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Send.Location = new System.Drawing.Point(480, 247);
+            this.btn_Send.Location = new System.Drawing.Point(480, 172);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(100, 93);
             this.btn_Send.TabIndex = 14;
@@ -254,7 +256,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(310, 215);
+            this.label2.Location = new System.Drawing.Point(310, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 13;
@@ -264,7 +266,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 215);
+            this.label1.Location = new System.Drawing.Point(20, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 20);
             this.label1.TabIndex = 12;
@@ -273,7 +275,7 @@
             // tb_Port
             // 
             this.tb_Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Port.Location = new System.Drawing.Point(354, 212);
+            this.tb_Port.Location = new System.Drawing.Point(354, 137);
             this.tb_Port.Name = "tb_Port";
             this.tb_Port.Size = new System.Drawing.Size(120, 26);
             this.tb_Port.TabIndex = 11;
@@ -281,7 +283,7 @@
             // tb_IP
             // 
             this.tb_IP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_IP.Location = new System.Drawing.Point(50, 212);
+            this.tb_IP.Location = new System.Drawing.Point(50, 137);
             this.tb_IP.Name = "tb_IP";
             this.tb_IP.Size = new System.Drawing.Size(254, 26);
             this.tb_IP.TabIndex = 10;
@@ -289,7 +291,7 @@
             // rtb_Message
             // 
             this.rtb_Message.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_Message.Location = new System.Drawing.Point(24, 244);
+            this.rtb_Message.Location = new System.Drawing.Point(24, 169);
             this.rtb_Message.Name = "rtb_Message";
             this.rtb_Message.Size = new System.Drawing.Size(450, 96);
             this.rtb_Message.TabIndex = 9;
@@ -324,6 +326,16 @@
             this.btn_CloseProxyConnection.Text = "Close proxy connection";
             this.btn_CloseProxyConnection.UseVisualStyleBackColor = false;
             this.btn_CloseProxyConnection.Click += new System.EventHandler(this.btn_CloseProxyConnection_Click);
+            // 
+            // rtbClientRequest
+            // 
+            this.rtbClientRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbClientRequest.Location = new System.Drawing.Point(24, 458);
+            this.rtbClientRequest.Name = "rtbClientRequest";
+            this.rtbClientRequest.ReadOnly = true;
+            this.rtbClientRequest.Size = new System.Drawing.Size(450, 96);
+            this.rtbClientRequest.TabIndex = 22;
+            this.rtbClientRequest.Text = "";
             // 
             // ProxyMain
             // 
@@ -370,5 +382,6 @@
         private System.Windows.Forms.TextBox tb_ServerPort;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RichTextBox rtbClientRequest;
     }
 }

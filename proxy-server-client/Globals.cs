@@ -20,5 +20,7 @@ namespace proxy_server_client
         public static dynamic ProxyTargetsList { get; set; }
 
         public static Form loginForm { get; set; }
+
+        public static RichTextBox gRtbClientRequest { get; set; }
     }
 }
