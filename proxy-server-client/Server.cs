@@ -222,7 +222,7 @@ namespace proxy_server_client
 				p.outputStream.BaseStream.Flush ();
 			}
 
-            Console.WriteLine("request: {0}", p.http_url);
+            // Console.WriteLine("request: {0}", p.http_url);
             p.writeSuccess();
             p.outputStream.WriteLine("<html><body><h1>test server</h1>");
             p.outputStream.WriteLine("Current Time: " + DateTime.Now.ToString());
